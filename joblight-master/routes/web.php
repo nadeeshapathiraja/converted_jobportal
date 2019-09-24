@@ -15,15 +15,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('candidate/home');
+Route::get('/index', function () {
+    return view('candidate/index');
 });
 
+Route::get('/register', function () {
+    return view('candidate/register');
+});
+
+Route::get('/referral', function () {
+    return view('candidate/referral');
+});
 // Route::get('/candidate/home', 'CandidateController@home')->name('candidatehome');
 // Route::get('/candidate/interviews', 'CandidateController@showinterview')->name('showinterview');
 // Route::get('/candidate/settings', 'CandidateController@settings')->name('candidatesettings');
 
-// Route::group(['middleware' => ['auth']], function () { 
+// Route::group(['middleware' => ['auth']], function () {
 // 	Route::get('/internal/profile/{mode?}/{pdf?}', 'CandidateController@profile')->name('candidateviewprofile'); //Used in iFrame
 // 	Route::get('/candidate/profile/{mode?}', 'CandidateController@renderprofile')->name('candidateprofile');
 // 	Route::post('/candidate/ajaxsave', 'CandidateController@savecandidate')->name('candidatesave');
@@ -41,7 +48,7 @@ Route::get('/home', function () {
 | and give it the controller to call when that URI is requested.
 |
 */
-//Testing routes 
+//Testing routes
 Route::get('/mail', 'MailController@mail');
 Route::get('/testacti', function () {
 	$options = array('first_name' => 'SPIDY',
@@ -52,18 +59,18 @@ Route::get('/testacti', function () {
 					'activation_url' => route('accountverification',['key' => 'wdejhvabcncnkjnckjpeimdcnnbanjcbhbckmcmbc'])
 					 );
 	$options = array('to_name' => 'employer',
-					'candidate_name' =>  'Candidate Name',										
-					'email' => 'sun',	
+					'candidate_name' =>  'Candidate Name',
+					'email' => 'sun',
 					'html' => 	''
 					 );
     return view('mail.resumeattached_template', $options);
 });
 Route::get('/testacti1', function () {
-	$data = DB::table('employerjobposts')->where('jobpost_id',1)->first();            
-    $subject = 'You may like this Posting on '.$data->job_title. ' at' ;    
-    $mailDetails = route('viewpost',[1, $data->job_title, 'sasasasasasasa']);                    
+	$data = DB::table('employerjobposts')->where('jobpost_id',1)->first();
+    $subject = 'You may like this Posting on '.$data->job_title. ' at' ;
+    $mailDetails = route('viewpost',[1, $data->job_title, 'sasasasasasasa']);
 		$referral_code = 'pecsundar@gmail.com';
-        $url_referralcode = Crypt::encrypt($referral_code); 
+        $url_referralcode = Crypt::encrypt($referral_code);
 	$options = array('my_name' => 'SPIDY',
 					'my_message' => 'ROCKS',
 					'referral_url' => $mailDetails,
@@ -92,7 +99,7 @@ Route::get('/autocomplete/{type?}/{val?}', 'CandidateController@autocomplete')->
 Route::get('/candidate/', function () { return view('template.candidate_index'); })->name('candidatelogin');
 Route::post('/candidate/signup', 'CandidateController@signup');
 Route::post('/candidate/login', 'CandidateController@login');
-Route::group(['middleware' => ['auth']], function () { 
+Route::group(['middleware' => ['auth']], function () {
 	Route::get('/internal/profile/{mode?}/{pdf?}', 'CandidateController@profile')->name('candidateviewprofile'); //Used in iFrame
 	Route::get('/candidate/profile/{mode?}', 'CandidateController@renderprofile')->name('candidateprofile');
 	Route::post('/candidate/ajaxsave', 'CandidateController@savecandidate')->name('candidatesave');
@@ -118,18 +125,18 @@ Route::post('/employer/ajaxlogin','EmployerController@login');
 Route::get('/employer/main','EmployerController@employerhome')->name('employerhome');
 
 Route::get('/post/{post_id}/{post_title}/{referralkey?}/{referral_email?}', 'EmployerController@viewpost')->name('viewpost');
-Route::group(['middleware' => ['verifiedusers']], function () { 
-	//Candidate	
+Route::group(['middleware' => ['verifiedusers']], function () {
+	//Candidate
 	Route::get('/candidate/home', 'CandidateController@home')->name('candidatehome');
 	Route::get('/candidate/interviews', 'CandidateController@showinterview')->name('showinterview');
 	Route::get('/candidate/settings', 'CandidateController@settings')->name('candidatesettings');
 	Route::get('/candidate/change-password', 'CandidateController@showChangePassword')->name('candidate_change_password');
 	//..Referral
 	Route::get('candidate/referseekers/{mode}/{id?}', 'CandidateController@referral')->name('referapplicant');
-	Route::post('candidate/referseekers/{id?}', 'MailController@sendreferralmail')->name('sendinvite');	
-	Route::get('agent/viewuploads/{id}/{docname?}', 'CandidateController@viewuploads')->name('viewuploads');	
-    Route::post('agent/resendinvite', 'MailController@resendreferralmail')->name('resendinvite');	
-	
+	Route::post('candidate/referseekers/{id?}', 'MailController@sendreferralmail')->name('sendinvite');
+	Route::get('agent/viewuploads/{id}/{docname?}', 'CandidateController@viewuploads')->name('viewuploads');
+    Route::post('agent/resendinvite', 'MailController@resendreferralmail')->name('resendinvite');
+
 	Route::post('/candidate/ajaxremove', 'CandidateController@removecandidatedata');
 	Route::post('/candidate/jobshortlist/{id}/{action}/{parameter1?}', 'CandidateController@jobshortlist')->name('jobshortlist');
 
@@ -145,7 +152,7 @@ Route::group(['middleware' => ['verifiedusers']], function () {
 	Route::post('/employer/ajaxcreatepost', 'EmployerController@postsave');
 	Route::post('/employer/ajaxconfirmpost/{id}', 'EmployerController@confirmpost');
 	Route::get('/employer/deletepost/{id}', 'EmployerController@deletepost');
-	
+
 	Route::get('/employer/managejob/{mode}', 'EmployerController@managepost')->name('managepost');
 	Route::get('/employer/managecandidate/{job_id}/{emp_status?}', 'EmployerController@managecandidate')->name('managecandidate');
 	Route::get('/processcandidate/{id}/{emp_status}/{mode}', 'EmployerController@processCandidate')->name('processcandidate');
@@ -155,9 +162,9 @@ Route::group(['middleware' => ['verifiedusers']], function () {
 
 	Route::get('/epayment', 'PaymentController@index')->name('epayment');
 	Route::get('/epayment', 'PaymentController@response')->name('paymentResponse');
-	
 
-});	
+
+});
 
 
 Route::group(['prefix' => '/api/v1'], function () {

@@ -8,19 +8,18 @@
 	<meta name="keywords" content="">
 	<meta name="author" content="CreativeLayers">
 
-	<!-- Styles -->
-	{{-- {!! HTML::style('new/css/bootstrap-grid.css') !!}
+	{{-- <!-- Styles -->
+    {!! HTML::style('new/css/bootstrap-grid.css') !!}
 	{!! HTML::style('new/css/icons.css') !!}
 	{!! HTML::style('new/css/animate.min.css') !!}
 	{!! HTML::style('new/css/style.css') !!}
 	{!! HTML::style('new/css/responsive.css') !!}
 	{!! HTML::style('new/css/chosen.css') !!}
-	{!! HTML::style('new/css/colors/colors.css') !!}	 --}}
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+	{!! HTML::style('new/css/colors/colors.css') !!}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" /> --}}
 
 </head>
 <body>
-	php artisan cache:clear
 <div class="page-loading">
 	<img src="{{ URL::asset('new/images/loader.gif') }} " alt="" />
 	<span>Skip Loader</span>

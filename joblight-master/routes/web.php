@@ -11,43 +11,46 @@
 |
 */
 
+//candidate
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index', function () {
+Route::get('candidate/index', function () {
     return view('candidate/index');
 });
 
-Route::get('/register', function () {
+Route::get('candidate/register', function () {
     return view('candidate/register');
 });
 
-Route::get('/referral', function () {
+Route::get('candidate/referral', function () {
     return view('candidate/referral');
 });
-// Route::get('/candidate/home', 'CandidateController@home')->name('candidatehome');
-// Route::get('/candidate/interviews', 'CandidateController@showinterview')->name('showinterview');
-// Route::get('/candidate/settings', 'CandidateController@settings')->name('candidatesettings');
 
-// Route::group(['middleware' => ['auth']], function () {
-// 	Route::get('/internal/profile/{mode?}/{pdf?}', 'CandidateController@profile')->name('candidateviewprofile'); //Used in iFrame
-// 	Route::get('/candidate/profile/{mode?}', 'CandidateController@renderprofile')->name('candidateprofile');
-// 	Route::post('/candidate/ajaxsave', 'CandidateController@savecandidate')->name('candidatesave');
-// });
+Route::get('candidate/editprofile', function () {
+    return view('candidate/editprofile');
+});
+
+//agenet
+
+Route::get('agent/enquiry', function () {
+    return view('agent/enquiry');
+});
+
+Route::get('agent/home', function () {
+    return view('agent/home');
+});
+
+Route::get('agent/index', function () {
+    return view('agent/index');
+});
+
+Route::get('agent/viewuploads', function () {
+    return view('agent/viewuploads');
+});
 
 
-
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
 //Testing routes
 Route::get('/mail', 'MailController@mail');
 Route::get('/testacti', function () {
@@ -94,6 +97,7 @@ Route::get('/candidate/signup/{referralkey?}', 'CandidateController@register')->
 Route::post('/ajaxcheckemail', 'Controller@checkemail');
 Route::get('/autocomplete/{type?}/{val?}', 'CandidateController@autocomplete')->name('autocomplete');
 
+
 //Candidate's route
 //Route::get('/candidate/', function () { return view('candidate.index'); })->name('candidatelogin');
 Route::get('/candidate/', function () { return view('template.candidate_index'); })->name('candidatelogin');
@@ -106,6 +110,8 @@ Route::group(['middleware' => ['auth']], function () {
 });
 Route::get('/jobsearch/{mode?}', 'CandidateController@jobsearch')->name('jobsearch');
 Route::get('/jobsearch', 'CandidateController@jobsearch')->name('jobsearch_paginate');
+
+
 //agent,s route
 Route::get('/agent/', 'AgentController@index')->name('agentlogin');
 //Route::get('/agent/enquiry','AgentController@agentenquiry_form')->name('agentenquiry');

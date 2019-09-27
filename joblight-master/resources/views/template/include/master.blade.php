@@ -6,17 +6,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
-	<meta name="author" content="CreativeLayers">
+    <meta name="author" content="CreativeLayers">
 
-	{{-- <!-- Styles -->
-    {!! HTML::style('new/css/bootstrap-grid.css') !!}
-	{!! HTML::style('new/css/icons.css') !!}
-	{!! HTML::style('new/css/animate.min.css') !!}
-	{!! HTML::style('new/css/style.css') !!}
-	{!! HTML::style('new/css/responsive.css') !!}
-	{!! HTML::style('new/css/chosen.css') !!}
-	{!! HTML::style('new/css/colors/colors.css') !!}
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" /> --}}
+
+    <!-- Styles -->
+	<link rel="stylesheet" href="/new/css/bootstrap-grid.css"/>
+	<link rel="stylesheet" href="/new/css/icons.css"/>
+	<link rel="stylesheet" href="/new/css/animate.min.css"/>
+	<link rel="stylesheet" href="/new/css/style.css"/>
+	<link rel="stylesheet" href="/new/css/responsive.css"/>
+	<link rel="stylesheet" href="/new/css/chosen.css"/>
+	<link rel="stylesheet" href="/new/css/colors.css"/>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+
 
 </head>
 <body>
@@ -52,19 +56,36 @@
 @yield('side-bar')
 @yield('popups')
 
-{{-- {!! HTML::script('new/js/jquery.min.js') !!}
-{!! HTML::script('new/js/modernizr.js') !!}
-{!! HTML::script('new/js/script.js') !!}
-{!! HTML::script('new/js/wow.min.js') !!}
-{!! HTML::script('new/js/slick.min.js') !!}
-{!! HTML::script('new/js/parallax.js') !!}
+{{-- <script src="new/js/jquery.min.js"></script>
+<script src="new/js/modernizr.js"></script>
+<script src="new/js/script.js"></script>
+<script src="new/js/wow.min.js"></script>
+<script src="new/js/slick.min.js"></script>
+<script src="new/js/parallax.js"></script>
 
-{!! HTML::script('new/js/select-chosen.js') !!}
-{!! HTML::script('new/js/jquery.scrollbar.min.js') !!}
-{!! HTML::script('new/js/circle-progress.min.js') !!}
-{!! HTML::script('new/js/usage.js') !!}
-{!! HTML::script('js/geolocation.js') !!} --}}
 
+<script src="new/js/select-chosen.js"></script>
+<script src="new/js/jquery.scrollbar.min.js"></script>
+<script src="new/js/circle-progress.min.js"></script>
+<script src="new/js/usage.js"></script>
+<script src="js/geolocation.j"></script> --}}
+
+
+<script type="text/javascript" src="new/js/jquery.min.js"></script>
+<script type="text/javascript" src="new/js/modernizr.js"></script>
+<script type="text/javascript" src="new/js/script.js"></script>
+<script type="text/javascript" src="new/js/wow.min.js"></script>
+<script type="text/javascript" src="new/js/slick.min.js"></script>
+<script type="text/javascript" src="new/js/parallax.js"></script>
+
+<script type="text/javascript" src="new/js/select-chosen.js"></script>
+<script type="text/javascript" src="new/js/jquery.scrollbar.min.js"></script>
+<script type="text/javascript" src="new/js/circle-progress.min.js"></script>
+<script type="text/javascript" src="new/js/usage.js"></script>
+<script type="text/javascript" src="js/geolocation.j"></script>
+
+
+{
 @yield('main-scripts')
 @yield('scripts')
 </body>

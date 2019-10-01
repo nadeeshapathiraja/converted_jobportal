@@ -14,8 +14,11 @@ class CreateAgentReferralsTable extends Migration
     public function up()
     {
         Schema::create('agent_referrals', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->increments('agent_referral_id')->zerofill();
+            $table->integer('account_id');
+            $table->string('agent_email',200)->default(NULL);
+            $table->string('document_name',500)->default(NULL);
+            $table->dateTime('created_at')->default(NULL);
         });
     }
 

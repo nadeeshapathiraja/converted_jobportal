@@ -14,8 +14,13 @@ class CreateCandidatepreferencesTable extends Migration
     public function up()
     {
         Schema::create('candidatepreferences', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->increments('candidate_educ_id')->zerofill();
+            $table->integer('candidate_profile_id')->default(NULL);;
+            $table->text('specialization')->default(NULL);;
+            $table->string('location_country',5)->default(NULL);
+            $table->string('location_state',50)->default(NULL);
+            $table->string('salary_currency',5)->default(NULL);
+            $table->string('salary_amount',15)->default(NULL);
         });
     }
 

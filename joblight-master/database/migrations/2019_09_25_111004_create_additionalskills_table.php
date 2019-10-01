@@ -14,8 +14,14 @@ class CreateAdditionalskillsTable extends Migration
     public function up()
     {
         Schema::create('additionalskills', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->increments('skill_id')->zerofill();
+            $table->integer('account_id')->zerofill();
+            $table->string('parent_id',50)->default(NULL);
+            $table->string('parent_table',50)->default(NULL);
+            $table->string('resume_id',50)->default(NULL);
+            $table->longText('content')->default(NULL);
+            $table->string('skill_level',15)->default(NULL);
+
         });
     }
 

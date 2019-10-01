@@ -14,8 +14,10 @@ class CreateCandidateSavedapplicationsTable extends Migration
     public function up()
     {
         Schema::create('candidate_savedapplications', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->increments('candidate_saved_application_id')->zerofill();
+            $table->integer('candidate_profile_id');
+            $table->integer('jobpost_id');
+            $table->dateTime('created_at');
         });
     }
 

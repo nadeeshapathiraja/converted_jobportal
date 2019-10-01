@@ -34,7 +34,7 @@ Route::get('candidate/editprofile', function () {
 
 //agenet
 
-Route::get('agent/enquiry', function () {
+Route::post('agent/enquiry', function () {
     return view('agent/enquiry');
 });
 

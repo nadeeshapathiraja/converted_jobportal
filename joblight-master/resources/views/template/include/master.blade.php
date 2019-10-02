@@ -56,20 +56,6 @@
 @yield('side-bar')
 @yield('popups')
 
-{{-- <script src="new/js/jquery.min.js"></script>
-<script src="new/js/modernizr.js"></script>
-<script src="new/js/script.js"></script>
-<script src="new/js/wow.min.js"></script>
-<script src="new/js/slick.min.js"></script>
-<script src="new/js/parallax.js"></script>
-
-
-<script src="new/js/select-chosen.js"></script>
-<script src="new/js/jquery.scrollbar.min.js"></script>
-<script src="new/js/circle-progress.min.js"></script>
-<script src="new/js/usage.js"></script>
-<script src="js/geolocation.j"></script> --}}
-
 
 <script type="text/javascript" src="new/js/jquery.min.js"></script>
 <script type="text/javascript" src="new/js/modernizr.js"></script>

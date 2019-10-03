@@ -57,6 +57,8 @@
 @yield('popups')
 
 
+
+
 <script type="text/javascript" src="new/js/jquery.min.js"></script>
 <script type="text/javascript" src="new/js/modernizr.js"></script>
 <script type="text/javascript" src="new/js/script.js"></script>

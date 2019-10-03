@@ -55,7 +55,7 @@
 													<label>Already have an account? <a href="#login-wrapper">Sign in</a> </label>
 											</div>
 											<div class="middleware_msg">{{Session::get('loginstatus')}}</div>
-									</form>
+                                    {{-- {{ Form::close() }} --}}
 									</div>
 								</section>
 							</div>

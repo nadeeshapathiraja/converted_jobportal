@@ -97,9 +97,11 @@
 		<div class="select-user">
 			<span class="active">Candidate</span>
 			<span onclick="window.location='{{route('employersignup')}}' "> Employer</span>
-		</div>
-		{{-- <form name='signup' method="post" action="{{URL::to('/candidate/signup')}}" accept-charset="utf-8">
-            {!! Form::hidden('account_type', 'candidate')!!}
+        </div>
+
+
+		<form name='signup' method="post" action="{{URL::to('/candidate/signup')}}" accept-charset="utf-8">
+            {{-- {!! Form::hidden('account_type', 'candidate')!!} --}}
 
 			<div class="cfield">
 				<input name="first_name" type="text" required placeholder="First Name" />
@@ -125,7 +127,9 @@
 			</div>
             <button type="submit">Signup</button>
 
-		</form> --}}
+        </form>
+
+
 		<div class="extra-login">
 			<span>Or</span>
 			<div class="login-social">

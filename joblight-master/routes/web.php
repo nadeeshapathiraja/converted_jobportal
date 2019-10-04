@@ -51,6 +51,13 @@ Route::get('agent/viewuploads', function () {
 });
 
 
+//employee
+
+Route::post('employee/signup', function () {
+    return view('employee/signup');
+});
+
+
 //Testing routes
 Route::get('/mail', 'MailController@mail');
 Route::get('/testacti', function () {

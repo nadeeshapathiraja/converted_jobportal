@@ -70,7 +70,7 @@
 <script type="text/javascript" src="new/js/jquery.scrollbar.min.js"></script>
 <script type="text/javascript" src="new/js/circle-progress.min.js"></script>
 <script type="text/javascript" src="new/js/usage.js"></script>
-<script type="text/javascript" src="js/geolocation.j"></script>
+<script type="text/javascript" src="js/geolocation.js"></script>
 
 
 {

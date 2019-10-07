@@ -17,45 +17,45 @@
                                         </header>
                                         <form name="login" method="post" action="{{URL::to('/candidate/signup')}}" accept-charset="utf-8" align="right" autocomplete='off'>
                                             {{ csrf_field() }}
-                                            {{-- {!! Form::hidden('referralkey',$referralkey) !!} --}}
-                                            <input type="hidden" name="account_type" value="candidate">
-                                                <div class="row">
-                                                    <div class="6u 12u(medium)" align="right">
-                                                        <input id="first_name" name="first_name" type="text" placeholder="First Name" maxlength="40" autofocus required>
+                                            {!! Form::hidden('referralkey',$referralkey) !!}
+                                                <input type="hidden" name="account_type" value="candidate">
+                                                    <div class="row">
+                                                        <div class="6u 12u(medium)" align="right">
+                                                            <input id="first_name" name="first_name" type="text" placeholder="First Name" maxlength="40" autofocus required>
+                                                        </div>
+                                                        <div class="6u 12u(medium)">
+                                                            <input id="last_name" name="last_name" type="text" placeholder="Last Name" required maxlength="40">
+                                                        </div>
                                                     </div>
-                                                    <div class="6u 12u(medium)">
-                                                        <input id="last_name" name="last_name" type="text" placeholder="Last Name" required maxlength="40">
-                                                    </div>
-                                                </div>
 
-                                                <div class="row">
-                                                    <div class="12u 12u(medium)">
-                                                        <input id="email" name="email" type="email" placeholder="Email" autocomplete="false" required>
+                                                    <div class="row">
+                                                        <div class="12u 12u(medium)">
+                                                            <input id="email" name="email" type="email" placeholder="Email" autocomplete="false" required>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="middleware_msg" id="email_errmsg"></div>
-                                                <div class="row">
-                                                    <div class="12u 12u(medium)">
-                                                        <input id="password" name="password" type="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
-                                                        title="Password must contain at least 6 characters, including UPPER/lowercase and numbers" required autocomplete="new-password" onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');">
+                                                    <div class="middleware_msg" id="email_errmsg"></div>
+                                                    <div class="row">
+                                                        <div class="12u 12u(medium)">
+                                                            <input id="password" name="password" type="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                                                            title="Password must contain at least 6 characters, including UPPER/lowercase and numbers" required autocomplete="new-password" onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="6u 12u(medium)" align="left">
-                                                        <input id="promotion" name="promotion" type="checkbox" checked=""><span>Receive promotions and highlights</span>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="4u 12u(medium)" align="left">
-                                                            <input id="referral_code" name="referral_code" type="text" placeholder="Referral Code" maxlength="40" value="{{$errors}}" {{($errors)? 'disabled' : '' }}>
+                                                    <div class="6u 12u(medium)" align="left">
+                                                            <input id="promotion" name="promotion" type="checkbox" checked=""><span>Receive promotions and highlights</span>
                                                     </div>
-                                                    <div class="8u 12u(medium)" align="right">
-                                                        <input type="submit" id="submit" value="Register">
+                                                    <div class="row">
+                                                        <div class="4u 12u(medium)" align="left">
+                                                                <input id="referral_code" name="referral_code" type="text" placeholder="Referral Code" maxlength="40" value="{{$errors}}" {{($errors)? 'disabled' : '' }}>
+                                                        </div>
+                                                        <div class="8u 12u(medium)" align="right">
+                                                            <input type="submit" id="submit" value="Register">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="6u 12u(medium)" align="left">
-                                                        <label>Already have an account? <a href="#login-wrapper">Sign in</a> </label>
-                                                </div>
-                                                <div class="middleware_msg">{{Session::get('loginstatus')}}</div>
-                                                {{-- {{ --Form::close()-- }} --}}
+                                                    <div class="6u 12u(medium)" align="left">
+                                                            <label>Already have an account? <a href="#login-wrapper">Sign in</a> </label>
+                                                    </div>
+                                                    <div class="middleware_msg">{{Session::get('loginstatus')}}</div>
+                                                {{ --Form::close()-- }}
                                         </form>
 									</div>
 								</section>

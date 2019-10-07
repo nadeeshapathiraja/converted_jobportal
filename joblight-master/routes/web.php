@@ -53,9 +53,7 @@ Route::get('agent/viewuploads', function () {
 
 //employee
 
-Route::post('employee/signup', function () {
-    return view('employee/signup');
-});
+
 
 
 //Testing routes
@@ -106,7 +104,7 @@ Route::get('/autocomplete/{type?}/{val?}', 'CandidateController@autocomplete')->
 
 
 //Candidate's route
-//Route::get('/candidate/', function () { return view('candidate.index'); })->name('candidatelogin');
+Route::get('/candidate/', function () { return view('candidate.index'); })->name('candidatelogin');
 Route::get('/candidate/', function () { return view('template.candidate_index'); })->name('candidatelogin');
 Route::post('/candidate/signup', 'CandidateController@signup');
 Route::post('/candidate/login', 'CandidateController@login');

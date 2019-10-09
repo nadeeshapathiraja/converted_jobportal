@@ -21,6 +21,7 @@ class CreateCandidatepreferencesTable extends Migration
             $table->string('location_state',50)->default(NULL);
             $table->string('salary_currency',5)->default(NULL);
             $table->string('salary_amount',15)->default(NULL);
+            //$table->primary('candidate_educ_id');
         });
     }
 

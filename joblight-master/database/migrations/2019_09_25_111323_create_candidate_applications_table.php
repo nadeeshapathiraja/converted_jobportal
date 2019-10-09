@@ -27,6 +27,7 @@ class CreateCandidateApplicationsTable extends Migration
             $table->string('emp_action_by',45)->default(NULL);
             $table->dateTime('emp_action_at')->default(NULL);
             $table->dateTime('cand_action_at')->default(NULL);
+            //$table->primary('candidate_application_id');
 
         });
     }

@@ -21,6 +21,7 @@ class CreateCreditPurchaseTrxesTable extends Migration
             $table->integer('credits');
             $table->dateTime('created_at');
             $table->string('status',250)->default(NULL);
+           //$table->primary('id');
 
         });
     }

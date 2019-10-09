@@ -44,6 +44,7 @@ class CreateEmployerjobpostsTable extends Migration
             $table->integer('created_by');
             $table->integer('updated_by');
             $table->char('is_confidential', 1);
+            //$table->primary('jobpost_id');
         });
     }
 

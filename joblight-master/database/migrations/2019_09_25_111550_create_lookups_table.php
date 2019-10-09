@@ -25,6 +25,7 @@ class CreateLookupsTable extends Migration
             $table->dateTime('created_at')->default(NULL);
             $table->string('updated_by',45)->default(NULL);
             $table->dateTime('updated_at')->default(NULL);
+            //$table->primary('lookup_id');
         });
     }
 

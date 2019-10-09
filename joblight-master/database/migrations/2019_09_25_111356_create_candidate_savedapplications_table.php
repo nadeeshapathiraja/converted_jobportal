@@ -18,6 +18,7 @@ class CreateCandidateSavedapplicationsTable extends Migration
             $table->integer('candidate_profile_id');
             $table->integer('jobpost_id');
             $table->dateTime('created_at');
+            //$table->primary('candidate_saved_application_id');
         });
     }
 

@@ -24,6 +24,8 @@ class CreateEmployerResumeDownloadsTable extends Migration
             $table->enum('status', ['downloaded', 'expired'])->default(NULL);
             $table->dateTime('expiry_date')->default(NULL);
             $table->dateTime('created_at')->default(NULL);
+            //$table->primary('employer_resume_download_id');
+            $table->index('employer_resume_download_id');
         });
     }
 

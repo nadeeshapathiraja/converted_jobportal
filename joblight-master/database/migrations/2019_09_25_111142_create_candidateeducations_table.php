@@ -23,14 +23,15 @@ class CreateCandidateeducationsTable extends Migration
             $table->string('city',50)->default(NULL);
             $table->string('country',50)->default(NULL);
             $table->string('state',50)->default(NULL);
-            $table->timestamp(' enrolldate ')->default(NULL);
+            $table->timestamp('enrolldate');
             $table->string('still_studying',50)->default(NULL);
-            $table->timestamp('grad_date')->default(NULL);
-            $table->timestamp('exp_graddate')->default(NULL);
+            //$table->timestamp('grad_date');
+            //$table->timestamp('exp_graddate');
             $table->string('is_graduated',1)->default(NULL);
-            $table->timestamp('lastenrollyear')->default(NULL);
+            //$table->timestamp('lastenrollyear');
             $table->string('future_study',1)->default(NULL);
             $table->string('field_of_study',45)->default(NULL);
+            //$table->primary('candidate_educ_id');
         });
     }
 

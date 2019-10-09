@@ -49,6 +49,8 @@ class CreateCandidateprofilesTable extends Migration
             $table->string('acc_name',150)->default(NULL);
             $table->string('acc_no',45)->default(NULL);
             $table->string('bank',150)->default(NULL);
+            //$table->primary('candidate_profile_id');
+
 
 
         });

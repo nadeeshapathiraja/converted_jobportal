@@ -19,6 +19,9 @@ class CreateAgentReferralsTable extends Migration
             $table->string('agent_email',200)->default(NULL);
             $table->string('document_name',500)->default(NULL);
             $table->dateTime('created_at')->default(NULL);
+            //$table->primary('agent_referral_id');
+
+
         });
     }
 

@@ -20,6 +20,7 @@ class CreateCandidateLanguagesTable extends Migration
             $table->string('spoken_level',45)->default(NULL);
             $table->string('written_level',45)->default(NULL);
             $table->string('default',45)->default(NULL);
+            //$table->primary('candidate_lang_id');
         });
     }
 

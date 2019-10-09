@@ -21,6 +21,9 @@ class CreateAdditionalskillsTable extends Migration
             $table->string('resume_id',50)->default(NULL);
             $table->longText('content')->default(NULL);
             $table->string('skill_level',15)->default(NULL);
+            //$table->primary('skill_id');
+
+
 
         });
     }

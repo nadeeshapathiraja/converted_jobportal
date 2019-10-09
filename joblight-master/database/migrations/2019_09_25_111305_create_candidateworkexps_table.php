@@ -22,10 +22,11 @@ class CreateCandidateworkexpsTable extends Migration
             $table->string('country',50)->default(NULL);
             $table->string('state',50)->default(NULL);
             $table->string('position',100)->default(NULL);
-            $table->timestamp(' start_date ')->default(NULL);
-            $table->timestamp(' end_date ')->default(NULL);
+            //$table->timestamp(' start_date ')->default(NULL);
+            //$table->timestamp(' end_date ')->default(NULL);
             $table->string('still_working',10)->default(NULL);
             $table->string('salary',50)->default(NULL);
+            //$table->primary('candidate_workexp_id');
         });
     }
 

@@ -25,6 +25,7 @@ class CreateEnquiriesTable extends Migration
             $table->string('action_taken',45)->default(NULL);
             $table->string('updated_by',45)->default(NULL);
             $table->string('updated_at',45)->default(NULL);
+            //$table->primary('id');
         });
     }
 

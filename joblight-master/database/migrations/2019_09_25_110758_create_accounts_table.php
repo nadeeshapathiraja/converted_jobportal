@@ -14,9 +14,9 @@ class CreateAccountsTable extends Migration
     public function up()
     {
         Schema::create('accounts', function (Blueprint $table) {
-            $table->increments('account_id')->zerofill()->primary();
+            $table->increments('account_id')->zerofill();
             $table->string('account_type',45)->default(NULL);
-            $table->string('email',200)->unique();
+            $table->string('email',100)->unique();
             $table->string('password',100);
             $table->boolean('is_subscribed')->default(NULL);
             $table->enum('account_status', ['0', '1']);
@@ -26,6 +26,10 @@ class CreateAccountsTable extends Migration
             $table->text('encrypted_key');
             $table->dateTime('verified_at');
             $table->text('api_token');
+            //$table->primary(array('account_id'));
+
+            // DB::statement('ALTER TABLE accounts MODIFY account_id INTEGER NOT NULL AUTO_INCREMENT');
+
 
         });
     }

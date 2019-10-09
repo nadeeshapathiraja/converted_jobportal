@@ -32,6 +32,10 @@ class CreateAgentprofilesTable extends Migration
             $table->string('created_by',45)->default(NULL);
             $table->dateTime('created_at')->default(NULL);
             $table->dateTime('updated_at')->default(NULL);
+            //$table->primary('skill_id');
+            $table->index('skill_id');
+
+
         });
     }
 
